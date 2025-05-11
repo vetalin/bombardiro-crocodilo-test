@@ -29,6 +29,20 @@ vkBridge.subscribe((e) => {
 });
 // --- конец темы VK ---
 
+// --- Баннерная реклама VK ---
+vkBridge
+  .send('VKWebAppShowBannerAd', { banner_location: 'bottom' })
+  .then((data) => {
+    if (data.result) {
+      // Баннер успешно показан
+    }
+  })
+  .catch((error) => {
+    // Ошибка показа баннера, не мешаем работе приложения
+    // console.log('Ошибка показа баннера:', error);
+  });
+// --- конец баннерной рекламы ---
+
 createRoot(document.getElementById('root')!).render(<AppConfig />);
 
 if (import.meta.env.MODE === 'development') {
