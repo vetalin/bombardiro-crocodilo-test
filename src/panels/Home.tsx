@@ -1,44 +1,38 @@
-import { FC } from 'react';
-import {
-  Panel,
-  PanelHeader,
-  Header,
-  Button,
-  Group,
-  Cell,
-  Div,
-  Avatar,
-  NavIdProps,
-} from '@vkontakte/vkui';
-import { UserInfo } from '@vkontakte/vk-bridge';
+import * as React from 'react';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
-export interface HomeProps extends NavIdProps {
-  fetchedUser?: UserInfo;
-}
-
-export const Home: FC<HomeProps> = ({ id, fetchedUser }) => {
-  const { photo_200, city, first_name, last_name } = { ...fetchedUser };
+const Home: React.FC = () => {
   const routeNavigator = useRouteNavigator();
+  const handleStartTest = () => {
+    routeNavigator.push('test');
+  };
 
   return (
-    <Panel id={id}>
-      <PanelHeader>Главная</PanelHeader>
-      {fetchedUser && (
-        <Group header={<Header size="s">User Data Fetched with VK Bridge</Header>}>
-          <Cell before={photo_200 && <Avatar src={photo_200} />} subtitle={city?.title}>
-            {`${first_name} ${last_name}`}
-          </Cell>
-        </Group>
-      )}
-
-      <Group header={<Header size="s">Navigation Example</Header>}>
-        <Div>
-          <Button stretched size="l" mode="secondary" onClick={() => routeNavigator.push('persik')}>
-            Покажите Персика, пожалуйста!
+    <div className="container flex items-center justify-center min-h-screen py-12">
+      <Card className="max-w-3xl w-full bg-background">
+        <CardContent className="flex flex-col items-center text-center p-8 md:p-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Тест Бомбардиро Крокодило
+          </h1>
+          <p className="text-lg mb-10 text-muted-foreground">
+            Добро пожаловать во вселенную Бомбардиро Крокодило! Этот
+            увлекательный тест поможет вам узнать больше о себе и своём месте в
+            этой удивительной вселенной. Погрузитесь в мир фантазии и откройте
+            новые грани своей личности.
+          </p>
+          <Button
+            size="lg"
+            className="w-full sm:w-auto text-lg px-8 py-6 h-auto"
+            onClick={handleStartTest}
+          >
+            Начать
           </Button>
-        </Div>
-      </Group>
-    </Panel>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
+
+export { Home };
