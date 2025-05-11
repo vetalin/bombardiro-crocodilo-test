@@ -10,6 +10,12 @@ import { cn } from '@/lib/utils';
 const questions = questionsData.questions;
 const characters = questionsData.characters;
 
+// Динамический импорт всех изображений из assets
+const images = import.meta.glob('../assets/*.{png,jpg,jpeg}', {
+  eager: true,
+  as: 'url',
+});
+
 function getCharacterResult(answers: string[]) {
   // Подсчёт совпадений по персонажам
   const score: Record<string, number> = {};
@@ -32,6 +38,27 @@ function getCharacterResult(answers: string[]) {
     }
   });
   return characters.find((c: any) => c.id === result);
+}
+
+function getCharacterImage(id: string): string | undefined {
+  const map: Record<string, string> = {
+    bombardiro_crocodilo: images['../assets/bombardiro_crocodilo.png'],
+    bombombini_gusini: images['../assets/bombombini_gusini.png'],
+    tralalelo_tralala: images['../assets/tralalelo_tralala.png'],
+    bobrito_bandito: images['../assets/bobrito_bandito.jpg'],
+    lirili_larila: images['../assets/lirili_larila.png'],
+    trulimero_trulicina: images['../assets/trulimero_trulicina.png'],
+    balerina_kapuchino: images['../assets/balerina_kapuchino.png'],
+    pingvinator_termoregulator:
+      images['../assets/pingvinator_termoregulator.jpeg'],
+    orangutini_ananasini: images['../assets/orangutini_ananasini.jpeg'],
+    krokodilo_taksichino: images['../assets/krokodilo_taksichino.jpeg'],
+    pussini_sushini: images['../assets/pussini_sushini.jpeg'],
+    shimpanzini_bananini: images['../assets/shimpanzini_bananini.jpeg'],
+    brbaloni_lulilolli: images['../assets/brbaloni_lulilolli.jpg'],
+    // Добавьте остальные по необходимости
+  };
+  return map[id];
 }
 
 interface ShareButtonProps
@@ -91,19 +118,7 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
   if (showResult) {
     const result = getCharacterResult(answers);
     const appLink = 'https://vk.com/app53544212';
-    // Сопоставление id персонажа и файла изображения
-    const characterImages: Record<string, string> = {
-      bombardiro_crocodilo: require('../assets/bombardiro_crocodilo.png'),
-      bombombini_gusini: require('../assets/bombombini_gusini.png'),
-      tralalelo_tralala: require('../assets/tralalelo_tralala.png'),
-      bobrito_bandito: require('../assets/bobrito_bandito.jpg'),
-      lirili_larila: require('../assets/lirili_larila.png'),
-      trulimero_trulicina: require('../assets/trulimero_trulicina.png'),
-      balerina_kapuchino: require('../assets/balerina_kapuchino.png'),
-      pingvinator_termoregulator: require('../assets/pingvinator_termoregulator.jpeg'),
-      // Если появятся новые персонажи — добавить сюда
-    };
-    const imageSrc = result && characterImages[result.id];
+    const imageSrc = result && getCharacterImage(result.id);
     return (
       <div className="max-w-xl mx-auto mt-10 p-6 bg-card text-card-foreground rounded-xl shadow-lg flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Ты — {result?.name}!</h2>

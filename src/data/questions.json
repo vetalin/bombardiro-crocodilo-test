@@ -53,6 +53,42 @@
       "name": "Пингвинатор Терморегулятор",
       "description": "Живой кондиционер-пингвин с панелью управления, дарит холод и мистику.",
       "image_url": ""
+    },
+    {
+      "id": "shimpanzini_bananini",
+      "name": "Шимпанзини Бананини",
+      "description": "Обезьяна-банан: зелёный банан с головой шимпанзе, любитель фруктовых шалостей.",
+      "image_url": ""
+    },
+    {
+      "id": "brbaloni_lulilolli",
+      "name": "БрБалони Лулилолли",
+      "description": "Капибара-кокос, символ спокойствия, медитации и мирных собраний.",
+      "image_url": ""
+    },
+    {
+      "id": "orangutini_ananasini",
+      "name": "Орангутини Ананасини",
+      "description": "Орангутан-ананас с листьями на голове, проводник в тропических джунглях.",
+      "image_url": ""
+    },
+    {
+      "id": "krokodilo_taksichino",
+      "name": "Крокодило Таксичино",
+      "description": "Крокодил-таксист в жёлто-чёрной ливрее, доставщик и городской навигатор.",
+      "image_url": ""
+    },
+    {
+      "id": "pussini_sushini",
+      "name": "Пуссини Сушини",
+      "description": "Кот-суши: пушистый ролл с морскими деликатесами, грациозный и загадочный.",
+      "image_url": ""
+    },
+    {
+      "id": "shpioniro_golubiro",
+      "name": "Шпиониро Голубиро",
+      "description": "Опытный частный детектив-голубь с острым глазом и клювом, мастер слежки и раскрытия тайн.",
+      "image_url": "https://dumpster.cdn.sports.ru/d/f2/9ea0b3bef643ff6c31efe4c8da811.png"
     }
   ],
   "questions": [
@@ -261,6 +297,195 @@
           "id": "q8a4",
           "text": "Мгновенно исчезнуть и появиться снова",
           "mapping": ["trulimero_trulicina"]
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "text": "Какую миссию ты бы выбрал?",
+      "answers": [
+        {
+          "id": "q9a1",
+          "text": "Слежка и сбор сведений",
+          "mapping": ["shpioniro_golubiro"]
+        },
+        {
+          "id": "q9a2",
+          "text": "Доставка важного груза",
+          "mapping": ["krokodilo_taksichino"]
+        },
+        {
+          "id": "q9a3",
+          "text": "Организация мирной встречи",
+          "mapping": ["brbaloni_lulilolli"]
+        },
+        {
+          "id": "q9a4",
+          "text": "Прорыв вражеской обороны",
+          "mapping": ["bombardiro_crocodilo"]
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "Какой ты по характеру?",
+      "answers": [
+        {
+          "id": "q10a1",
+          "text": "Спокойный и медитативный",
+          "mapping": ["brbaloni_lulilolli"]
+        },
+        {
+          "id": "q10a2",
+          "text": "Импульсивный и энергичный",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q10a3",
+          "text": "Расчетливый стратег",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q10a4",
+          "text": "Таинственный одиночка",
+          "mapping": ["tung_tung_tung_saur"]
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "text": "Какой стиль одежды тебе ближе?",
+      "answers": [
+        {
+          "id": "q11a1",
+          "text": "Форма шеф-повара",
+          "mapping": ["kalmarito_pastarito"]
+        },
+        {
+          "id": "q11a2",
+          "text": "Ночной костюм-шпион",
+          "mapping": ["shpioniro_golubiro"]
+        },
+        {
+          "id": "q11a3",
+          "text": "Рубашка с тропическими листьями",
+          "mapping": ["orangutini_ananasini"]
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "text": "Какое блюдо ты бы приготовил?",
+      "answers": [
+        {
+          "id": "q12a1",
+          "text": "Фруктовый смузи",
+          "mapping": ["shimpanzini_bananini"]
+        },
+        { "id": "q12a2", "text": "Суши-ролл", "mapping": ["pussini_sushini"] },
+        {
+          "id": "q12a3",
+          "text": "Кофейный десерт",
+          "mapping": ["balerina_kapuchino"]
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "text": "Какой вид транспорта ты предпочитаешь?",
+      "answers": [
+        {
+          "id": "q13a1",
+          "text": "Бронированный самолёт",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q13a2",
+          "text": "Пешая стелс-миссия",
+          "mapping": ["shpioniro_golubiro"]
+        },
+        {
+          "id": "q13a3",
+          "text": "Ускоренный спринт",
+          "mapping": ["tralalelo_tralala"]
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "text": "Кто твой идеальный напарник в приключении?",
+      "answers": [
+        {
+          "id": "q14a1",
+          "text": "Гусь-соратник",
+          "mapping": ["bombombini_gusini"]
+        },
+        {
+          "id": "q14a2",
+          "text": "Кондиционер-пингвин",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q14a3",
+          "text": "Бобр-организатор",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q14a4",
+          "text": "Которыба-компаньон",
+          "mapping": ["trulimero_trulicina"]
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "text": "Какой девиз ты бы выбрал?",
+      "answers": [
+        {
+          "id": "q15a1",
+          "text": "La famiglia prima di tutto",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q15a2",
+          "text": "Скорость – мой стиль",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q15a3",
+          "text": "Власть холода",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q15a4",
+          "text": "Тайна – мое оружие",
+          "mapping": ["shpioniro_golubiro"]
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "text": "Как ты отреагируешь на неожиданную угрозу?",
+      "answers": [
+        {
+          "id": "q16a1",
+          "text": "Охлажу ситуацию холодным рассудком",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q16a2",
+          "text": "Проведу переговоры и хитрите",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q16a3",
+          "text": "Вызову природные силы джунглей",
+          "mapping": ["orangutini_ananasini"]
+        },
+        {
+          "id": "q16a4",
+          "text": "Проникну тихо и соберу информацию",
+          "mapping": ["shpioniro_golubiro"]
         }
       ]
     }
