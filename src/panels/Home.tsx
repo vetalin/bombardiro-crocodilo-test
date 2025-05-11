@@ -10,8 +10,8 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="container flex items-center justify-center min-h-screen py-12">
-      <Card className="max-w-3xl w-full bg-background">
+    <div className="container flex items-center justify-center min-h-screen py-12 m-auto">
+      <Card className="max-w-3xl w-full bg-background border-none">
         <CardContent className="flex flex-col items-center justify-center text-center p-8 md:p-12 min-h-[400px]">
           <h1 className="text-3xl md:text-4xl font-bold mb-6 text-foreground w-full text-center">
             Тест Бомбардиро Крокодило
