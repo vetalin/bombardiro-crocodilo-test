@@ -91,10 +91,29 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
   if (showResult) {
     const result = getCharacterResult(answers);
     const appLink = 'https://vk.com/app53544212';
+    // Сопоставление id персонажа и файла изображения
+    const characterImages: Record<string, string> = {
+      bombardiro_crocodilo: require('../assets/bombardiro_crocodilo.png'),
+      bombombini_gusini: require('../assets/bombombini_gusini.png'),
+      tralalelo_tralala: require('../assets/tralalelo_tralala.png'),
+      bobrito_bandito: require('../assets/bobrito_bandito.jpg'),
+      lirili_larila: require('../assets/lirili_larila.png'),
+      trulimero_trulicina: require('../assets/trulimero_trulicina.png'),
+      balerina_kapuchino: require('../assets/balerina_kapuchino.png'),
+      pingvinator_termoregulator: require('../assets/pingvinator_termoregulator.jpeg'),
+      // Если появятся новые персонажи — добавить сюда
+    };
+    const imageSrc = result && characterImages[result.id];
     return (
       <div className="max-w-xl mx-auto mt-10 p-6 bg-card text-card-foreground rounded-xl shadow-lg flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Ты — {result?.name}!</h2>
-        {/* Здесь можно добавить изображение персонажа, если появится */}
+        {imageSrc && (
+          <img
+            src={imageSrc}
+            alt={result?.name}
+            className="mb-4 w-48 h-48 object-contain rounded-xl shadow-md border border-border bg-background"
+          />
+        )}
         <p className="mb-4 text-center text-lg">{result?.description}</p>
         <div className="flex flex-col gap-4 w-full max-w-xs mt-2">
           <ShareButton
