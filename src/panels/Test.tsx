@@ -146,6 +146,58 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
             setShowResult(false);
           }}
         />
+        {/* Расширенное описание */}
+        {result?.extended_description && (
+          <div className="mt-8 w-full">
+            <div className="text-lg font-semibold mb-2">
+              {result.extended_description}
+            </div>
+          </div>
+        )}
+        {/* Биография */}
+        {result?.biography && (
+          <div className="mt-4 w-full">
+            <div className="font-bold mb-1">Биография</div>
+            <div className="text-sm text-muted-foreground">
+              {result.biography}
+            </div>
+          </div>
+        )}
+        {/* История */}
+        {result?.story && (
+          <div className="mt-4 w-full">
+            <div className="font-bold mb-1">История</div>
+            <div className="text-sm text-muted-foreground">{result.story}</div>
+          </div>
+        )}
+        {/* Характеристики */}
+        {result?.characteristics && (
+          <div className="mt-4 w-full">
+            <div className="font-bold mb-1">Характеристики</div>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div>
+                <span className="font-semibold">Сила:</span>{' '}
+                {result.characteristics.strength}
+              </div>
+              <div>
+                <span className="font-semibold">Ловкость:</span>{' '}
+                {result.characteristics.agility}
+              </div>
+              <div>
+                <span className="font-semibold">Интеллект:</span>{' '}
+                {result.characteristics.intelligence}
+              </div>
+              <div>
+                <span className="font-semibold">Харизма:</span>{' '}
+                {result.characteristics.charisma}
+              </div>
+              <div>
+                <span className="font-semibold">Сюрреализм:</span>{' '}
+                {result.characteristics.surrealism}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
