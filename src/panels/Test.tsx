@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import questionsData from '../data/questions.json';
 import bridge from '@vkontakte/vk-bridge';
-import { Share2, RefreshCw } from 'lucide-react';
+import { Share2, RefreshCw, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 // Импортируем компоненты shadcn (Button, Card, ProgressBar и т.д.)
 // Импортируйте их согласно вашей структуре, пример:
@@ -134,8 +134,19 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
           <ShareButton
             variant="share"
             size="lg"
-            onClick={() => bridge.send('VKWebAppShare', { link: appLink })}
+            onClick={() =>
+              bridge.send('VKWebAppShare', {
+                link: appLink,
+              })
+            }
           />
+          <button
+            className="relative flex items-center justify-center gap-2 overflow-hidden rounded-xl border border-transparent bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-white font-medium transition-all duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 px-5 py-2.5 text-base"
+            onClick={() => bridge.send('VKWebAppRecommend')}
+          >
+            <Star className="h-4 w-4" />
+            <span>Рекомендовать приложение</span>
+          </button>
         </div>
         <ShareButton
           variant="retry"
