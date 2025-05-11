@@ -1,3 +1,5 @@
+import './index.css';
+
 import vkBridge, {
   parseURLSearchParamsForGetLaunchParams,
 } from '@vkontakte/vk-bridge';

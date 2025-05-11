@@ -49,7 +49,7 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
   if (showResult) {
     const result = getCharacterResult(answers);
     return (
-      <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg flex flex-col items-center">
+      <div className="max-w-xl mx-auto mt-10 p-6 bg-card text-card-foreground rounded-xl shadow-lg flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Ты — {result?.name}!</h2>
         {/* Здесь можно добавить изображение персонажа, если появится */}
         <p className="mb-4 text-center text-lg">{result?.description}</p>
@@ -72,13 +72,15 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
   return (
     <div
       id={id}
-      className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg"
+      className="max-w-xl mx-auto mt-10 p-6 bg-card text-card-foreground rounded-xl shadow-lg"
     >
       <div className="mb-6">
-        <div className="text-lg font-semibold mb-2">
+        <div className="text-lg font-semibold mb-2 text-card-foreground">
           Вопрос {step + 1} из {questions.length}
         </div>
-        <div className="text-xl font-bold mb-4">{q.text}</div>
+        <div className="text-xl font-bold mb-4 text-card-foreground">
+          {q.text}
+        </div>
         <div className="flex flex-col gap-4">
           {q.answers.map((a: any) => (
             <button
