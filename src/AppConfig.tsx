@@ -8,10 +8,12 @@ import {
   useAppearance,
   useInsets,
 } from '@vkontakte/vk-bridge-react';
-import { RouterProvider } from '@vkontakte/vk-mini-apps-router';
+// Удаляю импорт RouterProvider
+// import { RouterProvider } from '@vkontakte/vk-mini-apps-router';
 
 import { transformVKBridgeAdaptivity } from './utils';
-import { router } from './routes';
+// Удаляю импорт router
+// import { router } from './routes';
 import { App } from './App';
 
 export const AppConfig = () => {
@@ -22,9 +24,6 @@ export const AppConfig = () => {
     window.location.search,
   );
 
-  return (
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  );
+  // Просто рендерю <App />
+  return <App />;
 };

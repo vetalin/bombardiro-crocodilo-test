@@ -1,14 +1,11 @@
 import { useState, useEffect, ReactNode } from 'react';
 import bridge, { UserInfo } from '@vkontakte/vk-bridge';
-import { View, SplitLayout, SplitCol, ScreenSpinner } from '@vkontakte/vkui';
-import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router';
+import { SplitLayout, SplitCol, ScreenSpinner } from '@vkontakte/vkui';
 
 import { Home, Test } from './panels';
-import { DEFAULT_VIEW_PANELS } from './routes';
 
 export const App = () => {
-  const { panel: activePanel = DEFAULT_VIEW_PANELS.HOME } =
-    useActiveVkuiLocation();
+  const [activePanel, setActivePanel] = useState<'home' | 'test'>('home');
   const [fetchedUser, setUser] = useState<UserInfo | undefined>();
   const [popout, setPopout] = useState<ReactNode | null>(<ScreenSpinner />);
 
@@ -21,13 +18,13 @@ export const App = () => {
     fetchData();
   }, []);
 
+  const goToTest = () => setActivePanel('test');
+
   return (
     <SplitLayout>
       <SplitCol>
-        <View activePanel={activePanel}>
-          <Home id="home" fetchedUser={fetchedUser} />
-          <Test id="test" />
-        </View>
+        {activePanel === 'home' && <Home onStart={goToTest} />}
+        {activePanel === 'test' && <Test id="test" />}
       </SplitCol>
       {popout}
     </SplitLayout>

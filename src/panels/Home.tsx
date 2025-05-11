@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const Home: React.FC = () => {
-  const routeNavigator = useRouteNavigator();
-  const handleStartTest = () => {
-    routeNavigator.push('test');
-  };
+interface HomeProps {
+  onStart: () => void;
+  user?: any;
+}
 
+const Home: React.FC<HomeProps> = ({ onStart, user }) => {
   return (
     <div className="container flex items-center justify-center min-h-screen py-12 m-auto">
       <Card className="max-w-3xl w-full bg-background border-none">
@@ -26,7 +25,7 @@ const Home: React.FC = () => {
             <Button
               size="lg"
               className="text-lg px-8 py-6 h-auto"
-              onClick={handleStartTest}
+              onClick={onStart}
             >
               Начать
             </Button>
@@ -37,4 +36,4 @@ const Home: React.FC = () => {
   );
 };
 
-export { Home };
+export default Home;
