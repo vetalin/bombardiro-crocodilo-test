@@ -126,7 +126,7 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
           <img
             src={imageSrc}
             alt={result?.name}
-            className="mb-4 w-48 h-48 object-contain rounded-xl shadow-md border border-border bg-background"
+            className="mb-4 w-96 h-96 object-contain rounded-xl shadow-md border border-border bg-background"
           />
         )}
         <p className="mb-4 text-center text-lg">{result?.description}</p>
