@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import questionsData from '../data/questions.json';
+import bridge from '@vkontakte/vk-bridge';
+import { Share2, RefreshCw } from 'lucide-react';
+import { cn } from '@/lib/utils';
 // Импортируем компоненты shadcn (Button, Card, ProgressBar и т.д.)
 // Импортируйте их согласно вашей структуре, пример:
 // import { Button } from "@/components/ui/button";
@@ -31,6 +34,45 @@ function getCharacterResult(answers: string[]) {
   return characters.find((c: any) => c.id === result);
 }
 
+interface ShareButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'share' | 'retry';
+  size?: 'default' | 'lg';
+  text?: string;
+}
+
+const ShareButton = React.forwardRef<HTMLButtonElement, ShareButtonProps>(
+  ({ className, variant = 'share', size = 'default', text, ...props }, ref) => {
+    const isShare = variant === 'share';
+    const buttonText =
+      text || (isShare ? 'Поделиться с друзьями' : 'Пройти ещё раз');
+    const Icon = isShare ? Share2 : RefreshCw;
+    const buttonColor = isShare
+      ? 'bg-purple-600 hover:bg-purple-700 active:bg-purple-800'
+      : 'bg-orange-500 hover:bg-orange-600 active:bg-orange-700';
+
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          'relative flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-transparent',
+          buttonColor,
+          'text-white font-medium transition-all duration-300 ease-in-out',
+          'shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2',
+          isShare ? 'focus:ring-purple-500' : 'focus:ring-orange-400',
+          size === 'default' ? 'px-6 py-3 text-base' : 'px-8 py-4 text-lg',
+          className,
+        )}
+        {...props}
+      >
+        <Icon className="h-5 w-5" />
+        <span>{buttonText}</span>
+      </button>
+    );
+  },
+);
+ShareButton.displayName = 'ShareButton';
+
 const TestPanel: React.FC<{ id: string }> = ({ id }) => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
@@ -48,22 +90,28 @@ const TestPanel: React.FC<{ id: string }> = ({ id }) => {
 
   if (showResult) {
     const result = getCharacterResult(answers);
+    const appLink = 'https://vk.com/app53544212';
     return (
       <div className="max-w-xl mx-auto mt-10 p-6 bg-card text-card-foreground rounded-xl shadow-lg flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Ты — {result?.name}!</h2>
         {/* Здесь можно добавить изображение персонажа, если появится */}
         <p className="mb-4 text-center text-lg">{result?.description}</p>
-        {/* <Button onClick={() => { setStep(0); setAnswers([]); setShowResult(false); }}>Пройти ещё раз</Button> */}
-        <button
-          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        <div className="flex flex-col gap-4 w-full max-w-xs mt-2">
+          <ShareButton
+            variant="share"
+            size="lg"
+            onClick={() => bridge.send('VKWebAppShare', { link: appLink })}
+          />
+        </div>
+        <ShareButton
+          variant="retry"
+          className="mt-6"
           onClick={() => {
             setStep(0);
             setAnswers([]);
             setShowResult(false);
           }}
-        >
-          Пройти ещё раз
-        </button>
+        />
       </div>
     );
   }
