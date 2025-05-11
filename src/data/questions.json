@@ -1,0 +1,268 @@
+{
+  "characters": [
+    {
+      "id": "bombardiro_crocodilo",
+      "name": "Бомбардиро Крокодило",
+      "description": "Воинственный крокодил-бомбардировщик, лидер и символ сопротивления.",
+      "image_url": ""
+    },
+    {
+      "id": "bombombini_gusini",
+      "name": "Бомбомбини Гусини",
+      "description": "Гусь-самолёт в лётных очках, менее эпичный, но коварный соратник Бомбардиро.",
+      "image_url": ""
+    },
+    {
+      "id": "tralalelo_tralala",
+      "name": "Тралалело Тралала",
+      "description": "Трёхногая акула-спринтер в кроссовках Nike, символ скорости и хаоса.",
+      "image_url": ""
+    },
+    {
+      "id": "tung_tung_tung_saur",
+      "name": "Тунг-Тунг-Тунг Саур",
+      "description": "Антропоморфный деревянный столб с битой, ночной антагонист и сеятель страха.",
+      "image_url": ""
+    },
+    {
+      "id": "bobrito_bandito",
+      "name": "Бобрито Бандито",
+      "description": "Бобр-мафиози в костюме и с сигарой, мастер переговоров и интриг.",
+      "image_url": ""
+    },
+    {
+      "id": "lirili_larila",
+      "name": "Лирили Ларила",
+      "description": "Слон-кактус с будильниками, манипулирует временем и добавляет сюрреализма.",
+      "image_url": ""
+    },
+    {
+      "id": "trulimero_trulicina",
+      "name": "Трулимеро Труличина",
+      "description": "Которыба: кошачья голова, рыбье тело и человеческие ножки – квинтэссенция абсурда.",
+      "image_url": ""
+    },
+    {
+      "id": "balerina_kapuchino",
+      "name": "Балерина Капучино",
+      "description": "Грациозная балерина с чашкой кофе вместо головы, символ нежности и элегантности.",
+      "image_url": ""
+    },
+    {
+      "id": "pingvinator_termoregulator",
+      "name": "Пингвинатор Терморегулятор",
+      "description": "Живой кондиционер-пингвин с панелью управления, дарит холод и мистику.",
+      "image_url": ""
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Какую роль ты бы выбрал в бою?",
+      "answers": [
+        {
+          "id": "q1a1",
+          "text": "Грандиозный командир на передовой",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q1a2",
+          "text": "Лукавый стелс-атакующий",
+          "mapping": ["bombombini_gusini"]
+        },
+        {
+          "id": "q1a3",
+          "text": "Быстрый разведчик",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q1a4",
+          "text": "Хаотический разрушитель",
+          "mapping": ["tung_tung_tung_saur"]
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Какую сверхспособность ты бы выбрал?",
+      "answers": [
+        {
+          "id": "q2a1",
+          "text": "Манипулировать временем",
+          "mapping": ["lirili_larila"]
+        },
+        {
+          "id": "q2a2",
+          "text": "Замораживать воздух вокруг себя",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q2a3",
+          "text": "Контролировать чужие мысли",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q2a4",
+          "text": "Мгновенная телепортация",
+          "mapping": ["trulimero_trulicina"]
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Какое занятие ты предпочитаешь в свободное время?",
+      "answers": [
+        {
+          "id": "q3a1",
+          "text": "Организовывать грандиозные взрывы",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q3a2",
+          "text": "Мчаться на спринт-забегах",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q3a3",
+          "text": "Танцевать до упаду",
+          "mapping": ["balerina_kapuchino"]
+        },
+        {
+          "id": "q3a4",
+          "text": "Вести переговоры и строить интриги",
+          "mapping": ["bobrito_bandito"]
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Ты один в тёмной ночи на заброшенной станции. Что будешь делать?",
+      "answers": [
+        {
+          "id": "q4a1",
+          "text": "Спрятаться и наблюдать",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q4a2",
+          "text": "Обратиться за помощью к союзникам",
+          "mapping": ["balerina_kapuchino"]
+        },
+        {
+          "id": "q4a3",
+          "text": "Исследовать всё вокруг",
+          "mapping": ["trulimero_trulicina"]
+        },
+        {
+          "id": "q4a4",
+          "text": "Устроить засаду",
+          "mapping": ["tung_tung_tung_saur"]
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Какая фраза тебе ближе всего?",
+      "answers": [
+        {
+          "id": "q5a1",
+          "text": "Dobbiamo bombardare tutto!",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q5a2",
+          "text": "Tralalero Trallala!",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q5a3",
+          "text": "La famiglia prima di tutto",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q5a4",
+          "text": "Tempo è illusione",
+          "mapping": ["lirili_larila"]
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Что бы ты взял с собой в бой?",
+      "answers": [
+        {
+          "id": "q6a1",
+          "text": "Бомбардировщик",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q6a2",
+          "text": "Сапоги-кроссовки",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q6a3",
+          "text": "Пояс с гранатами",
+          "mapping": ["bombombini_gusini"]
+        },
+        {
+          "id": "q6a4",
+          "text": "Бейсбольная бита",
+          "mapping": ["tung_tung_tung_saur"]
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Какой образ ты бы выбрал для себя?",
+      "answers": [
+        {
+          "id": "q7a1",
+          "text": "Лётные очки и камуфляж",
+          "mapping": ["bombardiro_crocodilo"]
+        },
+        {
+          "id": "q7a2",
+          "text": "Балетная пачка и шлёпанцы",
+          "mapping": ["balerina_kapuchino"]
+        },
+        {
+          "id": "q7a3",
+          "text": "Полосатый костюм и федора",
+          "mapping": ["bobrito_bandito"]
+        },
+        {
+          "id": "q7a4",
+          "text": "Колючие кактусовые доспехи",
+          "mapping": ["lirili_larila"]
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Какой трюк ты бы показал на вечеринке?",
+      "answers": [
+        {
+          "id": "q8a1",
+          "text": "Устроить серию маленьких взрывов",
+          "mapping": ["bombombini_gusini"]
+        },
+        {
+          "id": "q8a2",
+          "text": "Заморозить часть танцпола",
+          "mapping": ["pingvinator_termoregulator"]
+        },
+        {
+          "id": "q8a3",
+          "text": "Пробежать полосу препятствий на скорость",
+          "mapping": ["tralalelo_tralala"]
+        },
+        {
+          "id": "q8a4",
+          "text": "Мгновенно исчезнуть и появиться снова",
+          "mapping": ["trulimero_trulicina"]
+        }
+      ]
+    }
+  ]
+}
